@@ -12,7 +12,7 @@ if(isset($_POST['register'])){
     $uppercase = preg_match('@[A-Z]@', $password);
     $lowercase = preg_match('@[a-z]@', $password);
     $number = preg_match('@[0-9]@', $password);
-    $spacial_char = preg_match('@[!,@,#,$,%,^,&,*]@', $password);
+    $spacial_char = preg_match('@[#,$,%,^,&,*]@', $password);
 
     if(empty($first_name)){
         $_SESSION['first_name_error'] = "First Name Field is Required.";
@@ -33,15 +33,17 @@ if(isset($_POST['register'])){
     }else if(empty($password)){
         $_SESSION['password_error'] = "Password Field is Required.";
         header('location: index.php');
+    }else if(!$uppercase || !$lowercase || !$number || !$spacial_char || strlen($password) < 8){
+        $_SESSION['password_error'] = "1. Password must be a uppercase 2. Password must be a lowercase. 3. Password must be a number 4. Password must be spacial character and greater then 8 character.";
+        header('location: index.php');
     }else if(empty($confirm_password)){
         $_SESSION['conpassword_error'] = "Confirm Password Field is Required.";
         header('location: index.php');
+    
     }else if($password != $confirm_password){
         $_SESSION['conpassword_error'] = "Does not match both password.";
         header('location: index.php');
-    }else if(!$uppercase || !$lowercase || !$number || !$spacial_char || !strlen($password) > 8){
-        $_SESSION['password_error'] = "1. Password must be a uppercase 2. Password must be a lowercase. 3. Password must be a number 4. Password must be spacial character and greater then 8 character.";
-        header('location: index.php');
+
     }else{
         echo $first_name;
         echo "<br />";
