@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
 body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     background-color: #45B39D;
+    font-family: 'Ubuntu', sans-serif;
 }
 .container{
     width: 100%;
@@ -28,14 +30,7 @@ body{
     margin: 5px auto;
     width: 95%; 
 }
-.col{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-.col .input-fields{
-    width: 48%;
-}
+
 .input-fields input{
     width: 97%;
     padding: 8px;
@@ -44,6 +39,14 @@ body{
     border: none;
     outline: none;
     border: 1px solid rgb(209, 208, 208);
+}
+.input-fields input:focus{
+    border: 1px solid #45B39D;
+}
+.input-fields label{
+    display: inline-block;
+    margin: 5px 0px;
+    font-size: 18px;
 }
 .input-fields .input-error{
     background-color: tomato;
@@ -59,7 +62,7 @@ body{
 }
 .eye-icon{
     position: absolute;
-    top: 10px;
+    top: 40px;
     right: 5px;
     cursor: pointer;
 }

@@ -19,31 +19,36 @@ session_start();
             <h2>Registration Form</h2>
             <form action="post.php" method="POST">  
                 <div class="input-fields">
-                    <input type="text" name="first_name" autocomplete="off" placeholder="Enter Your First Name">
+                    <label for="fname">First Name</label>
+                    <input type="text" name="first_name" autocomplete="off" placeholder="Enter Your First Name" id="fname">
                     <?php if(isset($_SESSION['first_name_error'])){   ?>
                         <span class="input-error"><?= $_SESSION['first_name_error']; ?></span>
                     <?php } unset($_SESSION['first_name_error']); ?>
                 </div>
                 <div class="input-fields">
-                    <input type="text" name="last_name"  autocomplete="off" placeholder="Enter Your Last Name">
+                    <label for="lname">Last Name</label>
+                    <input type="text" name="last_name"  autocomplete="off" placeholder="Enter Your Last Name" id="lname">
                     <?php if(isset($_SESSION['last_name_error'])){   ?>
                         <span class="input-error"><?= $_SESSION['last_name_error']; ?></span>
                     <?php } unset($_SESSION['last_name_error']); ?>
                 </div>
               
                 <div class="input-fields">
-                    <input type="email" name="email"  autocomplete="off" placeholder="Enter Your Email">
+                    <label for="emailF">Email</label>
+                    <input type="email" name="email"  autocomplete="off" placeholder="Enter Your Email" id="emailF">
                     <?php if(isset($_SESSION['email_error'])){   ?>
                         <span class="input-error"><?= $_SESSION['email_error']; ?></span>
                     <?php } unset($_SESSION['email_error']); ?>
                 </div>
                 <div class="input-fields">
-                    <input type="date" name="dob">
+                    <label for="dob">Date Of Birth</label>
+                    <input type="date" name="dob" id="dob">
                     <?php if(isset($_SESSION['dob_error'])){   ?>
                         <span class="input-error"><?= $_SESSION['dob_error']; ?></span>
                     <?php } unset($_SESSION['dob_error']); ?>
                 </div> 
                 <div class="input-fields eye-position">
+                    <label for="">Password</label>
                     <input type="password" id="password_hint" name="password"  autocomplete="off" placeholder="Enter Your Password">
                     <i class="fa fa-eye eye-icon"></i>
                     <?php if(isset($_SESSION['password_error'])){   ?>
@@ -51,7 +56,8 @@ session_start();
                     <?php } unset($_SESSION['password_error']); ?>
                 </div>
                 <div class="input-fields">
-                    <input type="password" name="confirm_password"  autocomplete="off" placeholder="Re-type the password">
+                    <label for="cpass">Confirm Password</label>
+                    <input type="password" name="confirm_password"  autocomplete="off" placeholder="Re-type the password" id="cpass">
                     <?php if(isset($_SESSION['conpassword_error'])){   ?>
                         <span class="input-error"><?= $_SESSION['conpassword_error'] ?></span>
                     <?php } unset($_SESSION['conpassword_error']); ?>
